@@ -26,6 +26,19 @@
   </noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- تتبع زر واتساب كـ Contact -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.btn-whatsapp').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'Contact');
+          }
+        });
+      });
+    });
+  </script>
+
   <!-- خطوط و Bootstrap RTL -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
@@ -128,7 +141,7 @@
       <img src="https://i.postimg.cc/pXQnTp4W/2025-07-19-045618.png" alt="بطاقة ماستر كارد">
       <h2>بطاقة ماستر كارد</h2>
       <p class="balance">الرصيد المتاح: 1000 شيكل</p>
-      <a class="btn" href="https://wa.me/96560312940" target="_blank">اطلب الآن</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/96560312940" target="_blank">اطلب الآن</a>
     </div>
 
     <!-- بطاقة فيزا -->
@@ -136,7 +149,7 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="بطاقة فيزا">
       <h2>بطاقة فيزا</h2>
       <p class="balance">الرصيد المتاح: 1000 شيكل</p>
-      <a class="btn" href="https://wa.me/96560312940" target="_blank">اطلب الآن</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/96560312940" target="_blank">اطلب الآن</a>
     </div>
   </section>
 
