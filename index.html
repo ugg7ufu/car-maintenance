@@ -1,12 +1,14 @@
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>بطاقات البنك العربي</title>
-  <meta name="description" content="احصل على بطاقة فيزا أو ماستر كارد من البنك العربي برصيد فوري – اطلب الآن بسهولة عبر واتساب.">
+  <meta charset="UTF-8">
+  <title>بطاقات البنك العربي - قدم الآن عبر واتساب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="احصل على بطاقة فيزا أو ماستر كارد من البنك العربي برصيد فوري - تواصل معنا عبر واتساب الآن.">
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel -->
   <script defer>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,7 +18,6 @@
     t.src='https://connect.facebook.net/en_US/fbevents.js';
     s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script');
-
     fbq('init', '1274887881317355');
     fbq('track', 'PageView');
   </script>
@@ -24,107 +25,74 @@
     <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=1274887881317355&ev=PageView&noscript=1"/>
   </noscript>
-  <!-- End Meta Pixel Code -->
 
   <!-- تتبع زر واتساب كـ Contact -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.btn-whatsapp').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          if (typeof fbq !== 'undefined') {
-            fbq('track', 'Contact');
-          }
+    document.addEventListener('DOMContentLoaded', function () {
+      const waBtn = document.querySelector('#whatsapp-btn');
+      if (waBtn) {
+        waBtn.addEventListener('click', function () {
+          fbq('track', 'Contact');
         });
-      });
+      }
     });
   </script>
 
-  <!-- خطوط و Bootstrap RTL -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-  
   <style>
     body {
-      font-family: 'Tajawal', sans-serif;
-      background: #f5f6fa;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: 'Tajawal', sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      direction: rtl;
     }
     header {
       background-color: #002d62;
-      padding: 30px 20px;
       color: white;
+      padding: 30px 20px;
       text-align: center;
-      border-bottom: 5px solid #009688;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
       margin: 0;
+      font-size: 2.2rem;
     }
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
+    .container {
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transition: 0.3s ease;
+      padding: 50px 20px;
     }
-    .card:hover {
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
-      transform: translateY(-8px);
-    }
-    .card img {
-      width: 100px;
+    .container img {
+      width: 140px;
       margin-bottom: 20px;
     }
-    .card h2 {
-      font-size: 1.5rem;
+    .container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
       color: #004481;
-      margin-bottom: 15px;
     }
-    .balance {
-      font-weight: bold;
-      color: #0077cc;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #009688;
-      color: white;
-      border-radius: 50px;
-      font-weight: 600;
+    .container p {
       font-size: 1.1rem;
-      text-decoration: none;
-      transition: 0.3s ease;
+      margin-bottom: 30px;
     }
-    .btn:hover {
-      background-color: #00796b;
-      transform: scale(1.05);
+    .whatsapp-btn {
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1da851;
     }
     footer {
-      background-color: #002d62;
-      color: white;
       text-align: center;
       padding: 20px;
+      background-color: #002d62;
+      color: #fff;
       margin-top: 40px;
-    }
-    @media (max-width: 480px) {
-      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
@@ -132,29 +100,19 @@
 <body>
   <header>
     <h1>بطاقات البنك العربي</h1>
-    <p>احصل على بطاقتك الآن بكل سهولة عبر الواتساب</p>
   </header>
 
-  <section class="cards-container">
-    <!-- بطاقة ماستر كارد -->
-    <div class="card">
-      <img src="https://i.postimg.cc/pXQnTp4W/2025-07-19-045618.png" alt="بطاقة ماستر كارد">
-      <h2>بطاقة ماستر كارد</h2>
-      <p class="balance">الرصيد المتاح: 1000 شيكل</p>
-      <a class="btn btn-whatsapp" href="https://wa.me/96560312940" target="_blank">اطلب الآن</a>
-    </div>
-
-    <!-- بطاقة فيزا -->
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="بطاقة فيزا">
-      <h2>بطاقة فيزا</h2>
-      <p class="balance">الرصيد المتاح: 1000 شيكل</p>
-      <a class="btn btn-whatsapp" href="https://wa.me/96560312940" target="_blank">اطلب الآن</a>
-    </div>
-  </section>
+  <div class="container">
+    <img src="https://i.postimg.cc/pXQnTp4W/2025-07-19-045618.png" alt="بطاقة البنك العربي">
+    <h2>احصل على بطاقتك الآن</h2>
+    <p>بطاقة فيزا أو ماستر كارد برصيد فوري، التقديم بسيط عبر واتساب دون مستندات معقدة.</p>
+    <a id="whatsapp-btn" class="whatsapp-btn" href="https://wa.me/96560312940?text=أرغب%20بالحصول%20على%20بطاقة%20البنك%20العربي" target="_blank">
+      تقديم عبر واتساب
+    </a>
+  </div>
 
   <footer>
-    <p>© 2025 جميع الحقوق محفوظة - البنك العربي</p>
+    © 2025 جميع الحقوق محفوظة - البنك العربي
   </footer>
 </body>
 </html>
